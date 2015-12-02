@@ -6,9 +6,10 @@ import javax.xml.bind.annotation.XmlType;
  * Created by verdian on 19/11/2015.
  */
 @XmlType
-public class Window extends Item {
+public class Window extends Aperture {
 
-    private WindowTypeOfOpeningEnum typeOfOpening;
+    boolean withCurtain;
+
 
 
     public Window() {
@@ -16,16 +17,16 @@ public class Window extends Item {
     }
 
 
-    public Window(String name, String description, WindowTypeOfOpeningEnum typeOfOpening) {
-        super(name, description);
-        this.typeOfOpening = typeOfOpening;
+    public Window(String name, String description, ApertureTypeOfOpeningEnum typeOfOpening,boolean withCurtain) {
+        super(name, description,typeOfOpening);
+        this.withCurtain = withCurtain;
     }
 
-    public WindowTypeOfOpeningEnum getTypeOfOpening() {
-        return typeOfOpening;
+    public boolean isWithCurtain() {
+        return withCurtain;
     }
 
-    public void setTypeOfOpening(WindowTypeOfOpeningEnum typeOfOpening) {
-        this.typeOfOpening = typeOfOpening;
+    public void setWithCurtain(boolean withCurtain) {
+        this.withCurtain = withCurtain;
     }
 }

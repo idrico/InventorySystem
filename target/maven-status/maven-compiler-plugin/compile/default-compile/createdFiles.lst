@@ -1,7 +1,9 @@
-com\verdicchio\impl\InventorySystemServiceImpl.class
-com\verdicchio\model\WindowTypeOfOpeningEnum.class
-com\verdicchio\model\Wall.class
-com\verdicchio\model\Window.class
-com\verdicchio\model\Category.class
-com\verdicchio\InventorySystemService.class
-com\verdicchio\model\Item.class
+com/verdicchio/model/Category.class
+com/verdicchio/model/ApertureTypeOfOpeningEnum.class
+com/verdicchio/model/Wall.class
+com/verdicchio/model/Aperture.class
+com/verdicchio/model/Item.class
+com/verdicchio/model/Door.class
+com/verdicchio/model/Window.class
+com/verdicchio/InventorySystemService.class
+com/verdicchio/impl/InventorySystemServiceImpl.class

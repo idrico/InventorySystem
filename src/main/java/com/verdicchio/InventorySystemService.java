@@ -1,9 +1,6 @@
 package com.verdicchio;
 
-import com.verdicchio.model.Category;
-import com.verdicchio.model.Item;
-import com.verdicchio.model.Wall;
-import com.verdicchio.model.Window;
+import com.verdicchio.model.*;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -17,29 +14,28 @@ public interface InventorySystemService {
 
 
     /**
-     * checkApplicability as a response
+     * checkApplicability
      *
-     * @return A simple hello world message
+     * @return A boolean that verify if it is applicable
      */
     @WebMethod
      Boolean checkApplicability();
 
 
     /**
-     * getCategory to someone precisely
+     * getCategory
      *
-     * @param name The name of the person to say hello to
-     * @return the number of current bookings
+     * @return the list of the category
      */
     @WebMethod
     List<Category> getCategory();
 
 
     /**
-     * getItemByCategory to someone precisely
+     * getItemByCategory
      *
-     * @param name The name of the person to say hello to
-     * @return the number of current bookings
+     * @param idCategory The id of the category
+     * @return the list of the items for category with idCategory
      */
     @WebMethod
      List<? extends Item> getItemByCategory(long idCategory);
@@ -49,6 +45,9 @@ public interface InventorySystemService {
 
     @WebMethod
     List<Wall> getWallDetails(long idwall);
+
+    @WebMethod
+    List<Door> getDoorDetails(long idDoor);
 
 
 }

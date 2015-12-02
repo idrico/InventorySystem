@@ -1,7 +1,9 @@
-C:\InventorySystem\src\main\java\com\verdicchio\model\WindowTypeOfOpeningEnum.java
-C:\InventorySystem\src\main\java\com\verdicchio\model\Window.java
-C:\InventorySystem\src\main\java\com\verdicchio\model\Category.java
-C:\InventorySystem\src\main\java\com\verdicchio\InventorySystemService.java
-C:\InventorySystem\src\main\java\com\verdicchio\impl\InventorySystemServiceImpl.java
-C:\InventorySystem\src\main\java\com\verdicchio\model\Wall.java
-C:\InventorySystem\src\main\java\com\verdicchio\model\Item.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Door.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/ApertureTypeOfOpeningEnum.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Aperture.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/impl/InventorySystemServiceImpl.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Window.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Category.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Wall.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Item.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/InventorySystemService.java

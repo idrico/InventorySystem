@@ -4,9 +4,7 @@ import com.verdicchio.model.*;
 
 import com.verdicchio.InventorySystemService;
 
-import javax.jws.WebMethod;
 import javax.jws.WebService;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,14 +45,29 @@ public class InventorySystemServiceImpl implements InventorySystemService {
          } else if(idCategory==2)
          {
              List<Window> windows = new ArrayList<Window>();
-             windows.add(new Window("WindowA","Window description A", WindowTypeOfOpeningEnum.TYPE_OF_OPENING_A));
-             windows.add(new Window("WindowB","Window description B",WindowTypeOfOpeningEnum.TYPE_OF_OPENING_B));
-             windows.add(new Window("WindowC","Window description C",WindowTypeOfOpeningEnum.TYPE_OF_OPENING_C));
+             windows.add(new Window("WindowA","Window description A", ApertureTypeOfOpeningEnum.TYPE_OF_OPENING_A,true));
+             windows.add(new Window("WindowB","Window description B", ApertureTypeOfOpeningEnum.TYPE_OF_OPENING_B,false));
+             windows.add(new Window("WindowC","Window description C", ApertureTypeOfOpeningEnum.TYPE_OF_OPENING_C,true));
 
              return windows;
+         } else if(idCategory==3)
+         {
+             List<Door> doors = new ArrayList<Door>();
+             doors.add(new Door("DoorA","Door description A", ApertureTypeOfOpeningEnum.TYPE_OF_OPENING_A));
+             doors.add(new Door("DoorB","Door description B", ApertureTypeOfOpeningEnum.TYPE_OF_OPENING_B));
+             doors.add(new Door("DoorC","Door description C", ApertureTypeOfOpeningEnum.TYPE_OF_OPENING_C));
+
+             return doors;
          }
 
         return null;
+    }
+
+    @Override
+    public List<Door> getDoorDetails(long idDoor){
+        List<Door> doors = new ArrayList<Door>();
+        return doors;
+
     }
 
     @Override

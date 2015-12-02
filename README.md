@@ -1,16 +1,16 @@
-helloworld-ws: Hello World JAX-WS Web Service
+InventorySystem-ws: Hello World JAX-WS Web Service
 ==================================================
 Author: Lee Newson  
 Level: Beginner  
 Technologies: JAX-WS  
-Summary: The `helloworld-ws` quickstart demonstrates a simple Hello World application, bundled and deployed as a WAR, that uses *JAX-WS* to say Hello.  
+Summary: The `InventorySystem-ws` quickstart demonstrates a simple Hello World application, bundled and deployed as a WAR, that uses *JAX-WS* to say Hello.
 Target Product: JBoss EAP  
 Source: <https://github.com/jboss-developer/jboss-eap-quickstarts/>  
 
 What is it?
 -----------
 
-The `helloworld-ws` quickstart demonstrates the use of *JAX-WS* in Red Hat JBoss Enterprise Application Platform as a simple Hello World application.
+The `InventorySystem-ws` quickstart demonstrates the use of *JAX-WS* in Red Hat JBoss Enterprise Application Platform as a simple Hello World application.
 
 System requirements
 -------------------
@@ -56,11 +56,11 @@ _NOTE: The following build command assumes you have configured your Maven user s
 4. This will deploy `target/InventorySystem.war` to the running instance of the server.
 5. Review the server log to see useful information about the deployed web service endpoint.
 
-        JBWS024061: Adding service endpoint metadata: id=com.verdicchio.HelloWorldServiceImpl
-         address=http://localhost:8080/InventorySystem/HelloWorldService
-         implementor=com.verdicchio.HelloWorldServiceImpl
-         serviceName={http://www.jboss.org/jbossas/quickstarts/wshelloworld/HelloWorld}HelloWorldService
-         portName={http://www.jboss.org/jbossas/quickstarts/wshelloworld/HelloWorld}HelloWorld
+        JBWS024061: Adding service endpoint metadata: id=com.verdicchio.InventorySystemServiceImpl
+         address=http://localhost:8080/InventorySystem/InventorySystemService
+         implementor=com.verdicchio.InventorySystemServiceImpl
+         serviceName={http://www.jboss.org/jbossas/quickstarts/wsInventorySystem/InventorySystem}InventorySystemService
+         portName={http://www.jboss.org/jbossas/quickstarts/wsInventorySystem/InventorySystem}InventorySystem
          annotationWsdlLocation=null
          wsdlLocationOverride=null
          mtomEnabled=false
@@ -69,7 +69,7 @@ _NOTE: The following build command assumes you have configured your Maven user s
 Access the application 
 ---------------------
 
-You can verify that the Web Service is running and deployed correctly by accessing the following URL: <http://localhost:8080/InventorySystem/HelloWorldService?wsdl>. This URL will display the deployed WSDL endpoint for the Web Service.
+You can verify that the Web Service is running and deployed correctly by accessing the following URL: <http://localhost:8080/InventorySystem/InventorySystemService?wsdl>. This URL will display the deployed WSDL endpoint for the Web Service.
 
 
 Undeploy the Archive
@@ -137,13 +137,13 @@ If you do not yet have an OpenShift account and domain, [Sign in to OpenShift](h
 
 ### Create the OpenShift Application
 
-_NOTE_: The domain name for this application will be `helloworldws-YOUR_DOMAIN_NAME.rhcloud.com`. In these instructions, be sure to replace all instances of `YOUR_DOMAIN_NAME` with your own OpenShift account user name.
+_NOTE_: The domain name for this application will be `InventorySystemws-YOUR_DOMAIN_NAME.rhcloud.com`. In these instructions, be sure to replace all instances of `YOUR_DOMAIN_NAME` with your own OpenShift account user name.
 
 Open a shell command prompt and change to a directory of your choice. Enter the following command to create a JBoss EAP 6 application:
 
-        rhc app create -a helloworldws -t jbosseap-6
+        rhc app create -a InventorySystemws -t jbosseap-6
 
-This command creates an OpenShift application called `helloworldws` and will run the application inside the `jbosseap-6` container. You should see some output similar to the following:
+This command creates an OpenShift application called `InventorySystemws` and will run the application inside the `jbosseap-6` container. You should see some output similar to the following:
 
     Application Options
     -------------------
@@ -152,35 +152,35 @@ This command creates an OpenShift application called `helloworldws` and will run
       Gear Size:  default
       Scaling:    no
 
-    Creating application 'helloworldws' ... done
+    Creating application 'InventorySystemws' ... done
 
     Waiting for your DNS name to be available ... done
 
-    Cloning into 'helloworldws'...
+    Cloning into 'InventorySystemws'...
     Warning: Permanently added the RSA host key for IP address '54.237.58.0' to the list of known hosts.
 
-    Your application 'helloworldws' is now available.
+    Your application 'InventorySystemws' is now available.
 
-      URL:        http://helloworldws-YOUR_DOMAIN_NAME.rhcloud.com/
-      SSH to:     52864af85973ca430200006f@helloworldws-YOUR_DOMAIN_NAME.rhcloud.com
-      Git remote: ssh://52864af85973ca430200006f@helloworldws-YOUR_DOMAIN_NAME.rhcloud.com/~/git/helloworldws.git/
-      Cloned to:  CURRENT_DIRECTORY/helloworldws
+      URL:        http://InventorySystemws-YOUR_DOMAIN_NAME.rhcloud.com/
+      SSH to:     52864af85973ca430200006f@InventorySystemws-YOUR_DOMAIN_NAME.rhcloud.com
+      Git remote: ssh://52864af85973ca430200006f@InventorySystemws-YOUR_DOMAIN_NAME.rhcloud.com/~/git/InventorySystemws.git/
+      Cloned to:  CURRENT_DIRECTORY/InventorySystemws
 
-    Run 'rhc show-app helloworldws' for more details about your app.
+    Run 'rhc show-app InventorySystemws' for more details about your app.
 
-The create command creates a git repository in the current directory with the same name as the application, in this case, `helloworldws`. Notice that the output also reports the URL at which the application can be accessed. Make sure it is available by typing the published url <http://helloworldws-YOUR_DOMAIN_NAME.rhcloud.com/> into a browser or use command line tools such as curl or wget. Be sure to replace `YOUR_DOMAIN_NAME` with your OpenShift account domain name.
+The create command creates a git repository in the current directory with the same name as the application, in this case, `InventorySystemws`. Notice that the output also reports the URL at which the application can be accessed. Make sure it is available by typing the published url <http://InventorySystemws-YOUR_DOMAIN_NAME.rhcloud.com/> into a browser or use command line tools such as curl or wget. Be sure to replace `YOUR_DOMAIN_NAME` with your OpenShift account domain name.
 
 ### Migrate the Quickstart Source
 
 Now that you have confirmed it is working you can now migrate the quickstart source and POM file. You no longer need the default application, so change directory into the new git repository and tell git to remove the source and pom files:
 
-        cd helloworldws
+        cd InventorySystemws
         git rm -r src pom.xml
 
-Copy the source and POM file for the `helloworld-ws` quickstart into this new git repository:
+Copy the source and POM file for the `InventorySystem-ws` quickstart into this new git repository:
 
-        cp -r QUICKSTART_HOME/helloworld-ws/src .
-        cp QUICKSTART_HOME/helloworld-ws/pom.xml .
+        cp -r QUICKSTART_HOME/InventorySystem-ws/src .
+        cp QUICKSTART_HOME/InventorySystem-ws/pom.xml .
         
 ### Configure the OpenShift Server
 
@@ -206,7 +206,7 @@ Verify that Openshift has Web services configured by default. To do this:
 You can now deploy the changes to your OpenShift application using git as follows:
 
         git add src pom.xml
-        git commit -m "helloworld-ws quickstart on OpenShift"
+        git commit -m "InventorySystem-ws quickstart on OpenShift"
         git push
 
 The final push command triggers the OpenShift infrastructure to build and deploy the changes. 
@@ -217,7 +217,7 @@ Note that the `openshift` profile in `pom.xml` file is activated by OpenShift an
 
 Once the application is deployed, you can test the application by accessing the following URL either via a browser or using tools such as curl or wget. Be sure to replace the `YOUR_DOMAIN_NAME` in the URL with your OpenShift account domain name.
 
-        http://helloworldws-YOUR_DOMAIN_NAME.rhcloud.com/InventorySystem/HelloWorldService?wsdl
+        http://InventorySystemws-YOUR_DOMAIN_NAME.rhcloud.com/InventorySystem/InventorySystemService?wsdl
 
 If the application has run successfully you should see the WSDL output in the browser.
 
@@ -227,7 +227,7 @@ You can use the OpenShift command line tools or the OpenShift web console to dis
 
 Now you can look at the output of the server by running the following command:
 
-        rhc tail -a helloworldws
+        rhc tail -a InventorySystemws
 
 This will show the tail of the JBoss EAP server log.
 
@@ -246,13 +246,13 @@ _NOTE: The following commands assume you have configured your Maven user setting
 1. Make sure you have deployed the Application to Openshift as described above.
 2. Type the following command to run the test goal with the following profile activated and the URL of the deployed Application. Be sure to replaces `YOUR_DOMAIN_NAME` in the URL with your OpenShift account domain name:
 
-		mvn clean test -Pjbossas-remote -Dremote.server.url=http://helloworldws-YOUR_DOMAIN_NAME.rhcloud.com/
+		mvn clean test -Pjbossas-remote -Dremote.server.url=http://InventorySystemws-YOUR_DOMAIN_NAME.rhcloud.com/
 
 ### Delete the OpenShift Application
 
 When you are finished with the application you can delete it from OpenShift as follows:
 
-        rhc app-delete -a helloworldws
+        rhc app-delete -a InventorySystemws
 
 _Note_: There is a limit to the number of applications you can deploy concurrently to OpenShift. If the `rhc app create` command returns an error indicating you have reached that limit, you must delete an existing application before you continue. 
 
