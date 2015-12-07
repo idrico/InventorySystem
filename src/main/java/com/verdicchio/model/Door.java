@@ -9,8 +9,8 @@ import javax.xml.bind.annotation.XmlType;
 public class Door extends Aperture {
 
 
-    public Door(String name, String description, ApertureTypeOfOpeningEnum typeOfOpening) {
-        super(name, description, typeOfOpening);
+    public Door(long idDoor,String name, String description,int price, ApertureTypeOfOpeningEnum typeOfOpening) {
+        super(idDoor,name, description,price, typeOfOpening);
     }
 
     public Door() {

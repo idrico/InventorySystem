@@ -3,7 +3,7 @@ package com.verdicchio.model;
 /**
  * Created by verdian on 19/11/2015.
  */
-public abstract class Item {
+public abstract class Component {
 
     private Long id;
 
@@ -11,7 +11,9 @@ public abstract class Item {
 
     private String description;
 
-    public Item() {
+    private int price;
+
+    public Component() {
     }
 
     public Long getId() {
@@ -38,8 +40,18 @@ public abstract class Item {
         this.description = description;
     }
 
-    public Item(String name, String description) {
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Component(Long id, String name, String description, int price) {
+        this.id = id;
         this.name = name;
         this.description = description;
+        this.price = price;
     }
 }

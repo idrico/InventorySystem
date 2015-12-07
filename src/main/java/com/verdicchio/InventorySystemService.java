@@ -10,7 +10,7 @@ import java.util.List;
  * Created by verdian on 12/11/2015.
  */
 @WebService(targetNamespace = "InventorySystem")
-public interface InventorySystemService {
+public interface InventorySystemService{
 
 
     /**
@@ -19,7 +19,7 @@ public interface InventorySystemService {
      * @return A boolean that verify if it is applicable
      */
     @WebMethod
-     Boolean checkApplicability();
+    DetailAvailability checkApplicability(long idCategory, long idComponent,long idHouseDesign);
 
 
     /**
@@ -32,13 +32,13 @@ public interface InventorySystemService {
 
 
     /**
-     * getItemByCategory
+     * getcomponentByCategory
      *
      * @param idCategory The id of the category
-     * @return the list of the items for category with idCategory
+     * @return the list of the components for category with idCategory
      */
     @WebMethod
-     List<? extends Item> getItemByCategory(long idCategory);
+     List<? extends Component> getComponentByCategory(long idCategory);
 
     @WebMethod
     List<Window> getWindowDetails(long idWindow);
@@ -48,6 +48,9 @@ public interface InventorySystemService {
 
     @WebMethod
     List<Door> getDoorDetails(long idDoor);
+
+    @WebMethod
+    List<Roof> getRoofDetails(long idRoof);
 
 
 }

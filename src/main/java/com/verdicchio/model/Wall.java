@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlType;
  * Created by verdian on 19/11/2015.
  */
 @XmlType
-public class Wall extends Item {
+public class Wall extends Component {
 
 
     private int width;
@@ -17,8 +17,8 @@ public class Wall extends Item {
         super();
     }
 
-    public Wall(String name, String description, int width, int height) {
-        super(name, description);
+    public Wall(long idWall,String name, String description,int price, int width, int height) {
+        super(idWall,name, description,price);
         this.width = width;
         this.height = height;
     }
