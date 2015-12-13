@@ -5,9 +5,11 @@ import java.util.Date;
 /**
  * Created by idrico on 05/12/15.
  */
-public class DetailAvailability {
+public class DetailAvailability <T>{
 
-    private boolean isAvialable;
+    private boolean isAvailable;
+
+    private T component;
 
     private boolean isApplicable;
 
@@ -21,12 +23,20 @@ public class DetailAvailability {
         isApplicable = applicable;
     }
 
-    public boolean isAvialable() {
-        return isAvialable;
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
-    public void setAvialable(boolean avialable) {
-        isAvialable = avialable;
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    public T getComponent() {
+        return component;
+    }
+
+    public void setComponent(T component) {
+        this.component = component;
     }
 
     public Date getDateNextAvailability() {

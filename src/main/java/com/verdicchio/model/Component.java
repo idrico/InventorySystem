@@ -13,6 +13,9 @@ public abstract class Component {
 
     private int price;
 
+    private Category category;
+
+
     public Component() {
     }
 
@@ -48,8 +51,17 @@ public abstract class Component {
         this.price = price;
     }
 
-    public Component(Long id, String name, String description, int price) {
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Component(Long id, Category category, String name, String description, int price) {
         this.id = id;
+        this.category = category;
         this.name = name;
         this.description = description;
         this.price = price;

@@ -17,8 +17,8 @@ public class Wall extends Component {
         super();
     }
 
-    public Wall(long idWall,String name, String description,int price, int width, int height) {
-        super(idWall,name, description,price);
+    public Wall(long idWall,Category category,String name, String description,int price, int width, int height) {
+        super(idWall,category,name, description,price);
         this.width = width;
         this.height = height;
     }

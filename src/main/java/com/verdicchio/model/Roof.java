@@ -9,8 +9,8 @@ import javax.xml.bind.annotation.XmlType;
 public class Roof extends Component {
 
 
-    public Roof(long idRoof,String name, String description,int price) {
-        super(idRoof,name, description,price);
+    public Roof(long idRoof,Category category,String name, String description,int price) {
+        super(idRoof,category,name, description,price);
     }
 
     public Roof() {
