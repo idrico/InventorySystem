@@ -1,14 +1,22 @@
 package com.verdicchio.model;
 
 
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
 /**
  * Created by verdian on 19/11/2015.
  */
-public class Category {
+@Entity
+@XmlRootElement
+@Table(name = "Category", uniqueConstraints = @UniqueConstraint(columnNames = "id"))
+public class Category implements Serializable {
 
-
+    @Id
+    @Column( nullable = false)
+    @GeneratedValue
     private Long id;
-
     private String name;
 
     public long getId() {

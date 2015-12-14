@@ -1,12 +1,18 @@
 package com.verdicchio.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
  * Created by verdian on 19/11/2015.
  */
 @XmlType
-public class Window extends Aperture {
+@Entity
+@XmlRootElement
+@Table(name = "Window" )
+public class Window extends  Aperture{
 
     boolean withCurtain;
 

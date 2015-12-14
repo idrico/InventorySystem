@@ -3,7 +3,9 @@ package com.verdicchio.impl;
 import com.verdicchio.model.*;
 
 import com.verdicchio.InventorySystemService;
+import com.verdicchio.repository.ConsultationRepository;
 
+import javax.inject.Inject;
 import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,6 +17,9 @@ import java.util.List;
 @WebService(serviceName = "InventorySystemService", portName = "InventorySystem", name = "InventorySystem", endpointInterface = "com.verdicchio.InventorySystemService", targetNamespace = "InventorySystem")
 public class InventorySystemServiceImpl  <T> implements InventorySystemService {
 
+
+    @Inject
+    ConsultationRepository consultationRepository;
 
     @Override
     public DetailAvailability checkApplicability(long idCategory, long idComponent,long idHouseDesign){
@@ -171,6 +176,10 @@ public class InventorySystemServiceImpl  <T> implements InventorySystemService {
 
     }
 
-
+    @Override
+    public List<Product> getHouseStyle(){
+        List<Product> products = consultationRepository.getHouseDesign();
+        return products;
+    }
 
 }

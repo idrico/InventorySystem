@@ -1,13 +1,38 @@
 package com.verdicchio.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by verdian on 19/11/2015.
  */
 @XmlType
-public class Wall extends Component {
+@Entity
+@XmlRootElement
+@Table(name = "Wall" )
+public class Wall extends Component implements Serializable {
 
+
+    private long external_wall_Id;
+
+
+    @OneToMany( cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn(name="external_door_Id")
+    @OrderBy("id")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Door> doors;
+
+    @OneToMany( cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn(name="external_window_Id")
+    @OrderBy("id")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Window> windows;
 
     private int width;
 

@@ -1,19 +1,32 @@
 package com.verdicchio.model;
 
+import javax.persistence.*;
+
 /**
  * Created by verdian on 19/11/2015.
  */
+
+@MappedSuperclass
 public abstract class Component {
 
-    private Long id;
 
-    private String name;
+        @Id
+        @Column( nullable = false)
+        @GeneratedValue
+        private long id;
 
-    private String description;
+        private String name;
+
+        private String description;
+
+
+        @ManyToOne
+        @JoinColumn(name = "category")
+        private Category category;
 
     private int price;
 
-    private Category category;
+
 
 
     public Component() {

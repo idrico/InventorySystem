@@ -52,5 +52,7 @@ public interface InventorySystemService{
     @WebMethod
     List<Roof> getRoofDetails(long idRoof);
 
+    @WebMethod
+    List<Product> getHouseStyle();
 
 }
