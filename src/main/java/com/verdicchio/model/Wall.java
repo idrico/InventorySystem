@@ -14,7 +14,7 @@ import java.util.List;
  */
 @XmlType
 @Entity
-@XmlRootElement
+@XmlRootElement(namespace = "InventorySystem")
 @Table(name = "Wall" )
 public class Wall extends Component implements Serializable {
 
@@ -62,5 +62,21 @@ public class Wall extends Component implements Serializable {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public List<Door> getDoors() {
+        return doors;
+    }
+
+    public void setDoors(List<Door> doors) {
+        this.doors = doors;
+    }
+
+    public List<Window> getWindows() {
+        return windows;
+    }
+
+    public void setWindows(List<Window> windows) {
+        this.windows = windows;
     }
 }

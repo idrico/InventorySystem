@@ -15,7 +15,7 @@ import java.util.List;
 
 @XmlType
 @Entity
-@XmlRootElement
+@XmlRootElement(namespace = "InventorySystem")
 @Table(name = "House" )
 public class House implements Serializable {
 

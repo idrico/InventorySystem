@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @XmlType
 @Entity
-@XmlRootElement
+@XmlRootElement(namespace = "InventorySystem")
 @Table(name = "Foundation" )
 public class Foundation extends Component implements Serializable {
 

@@ -55,4 +55,7 @@ public interface InventorySystemService{
     @WebMethod
     List<Product> getHouseStyle();
 
+    @WebMethod
+    House getHouseDetails(long idHouse);
+
 }

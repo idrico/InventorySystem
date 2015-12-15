@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by verdian on 19/11/2015.
  */
 @Entity
-@XmlRootElement
+@XmlRootElement(namespace = "InventorySystem")
 @Table(name = "Category", uniqueConstraints = @UniqueConstraint(columnNames = "id"))
 public class Category implements Serializable {
 

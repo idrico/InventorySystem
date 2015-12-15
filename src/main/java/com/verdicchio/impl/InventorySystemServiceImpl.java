@@ -177,6 +177,13 @@ public class InventorySystemServiceImpl  <T> implements InventorySystemService {
     }
 
     @Override
+    public House getHouseDetails(long idHouse){
+        House house = new House();
+        return house;
+
+    }
+
+    @Override
     public List<Product> getHouseStyle(){
         List<Product> products = consultationRepository.getHouseDesign();
         return products;

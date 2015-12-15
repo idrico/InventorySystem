@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 @XmlType
 @Entity
-@XmlRootElement
+@XmlRootElement(namespace = "InventorySystem")
 @Table(name = "Roof" )
 public class Roof extends Component implements Serializable {
 
