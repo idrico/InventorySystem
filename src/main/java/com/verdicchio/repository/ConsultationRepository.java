@@ -4,6 +4,10 @@ package com.verdicchio.repository;
 import com.verdicchio.model.House;
 import com.verdicchio.model.Product;
 
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -13,7 +17,7 @@ import java.util.List;
 /**
  * Created by verdian on 19/08/2015.
  */
-
+@TransactionManagement(TransactionManagementType.CONTAINER)
 public class ConsultationRepository {
 
     public ConsultationRepository() {
@@ -27,6 +31,13 @@ public class ConsultationRepository {
     public House findHouseById(long id)
     {
         return em.find(House.class, id);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public long saveProduct(Product product) throws Exception {
+        em.persist(product);
+        em.flush();
+        return product.getId();
     }
 
 

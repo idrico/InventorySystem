@@ -58,4 +58,6 @@ public interface InventorySystemService{
     @WebMethod
     House getHouseDetails(long idHouse);
 
+    @WebMethod
+    long saveProduct(Product product);
 }

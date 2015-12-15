@@ -189,4 +189,19 @@ public class InventorySystemServiceImpl  <T> implements InventorySystemService {
         return products;
     }
 
+    @Override
+    public long saveProduct(Product product)
+    {
+        long id=-1;
+
+        try {
+            id=consultationRepository.saveProduct(product);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return id;
+    }
+
 }

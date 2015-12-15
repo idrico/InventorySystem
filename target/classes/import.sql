@@ -46,8 +46,8 @@ insert into Foundation(id, name, description, price,category)values (4,'Foundati
 
 
 insert into Roof(id, name, description, price,category)values (1,'Roof1','Description Roof1',10,4)
-insert into Roof(id, name, description, price,category)values (2,'Roof1','Description Roof2',10,4)
-insert into Roof(id, name, description, price,category)values (3,'Roof1','Description Roof3',10,4)
+insert into Roof(id, name, description, price,category)values (2,'Roof2','Description Roof2',10,4)
+insert into Roof(id, name, description, price,category)values (3,'Roof3','Description Roof3',10,4)
 
 
 insert into Window(id, name, description, price, typeOfOpening, withCurtain,external_window_Id,category)values (1,'Window1','Description Window1',10,1,true,1,2)
