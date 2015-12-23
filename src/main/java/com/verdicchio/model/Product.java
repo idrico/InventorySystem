@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
+import java.util.Date;
 
 @XmlType
 @Entity
@@ -17,25 +18,21 @@ public class Product implements Serializable {
 
     @Id
     @Column(name = "PROD_ID", nullable = false)
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long id;
+
+    private int price;
+
+    private Date timeToComplete;
 
     private String name;
 
-    private String description;
-
-    //Todo:after the use of the clonemaybe I don't need anymore of this property
     private boolean isBasicDesign;
 
 
-    @OneToOne(optional=false)
-    @JoinColumn(name="HOUSE_ID",
-            insertable =  false, updatable = false)
-    House house;
-
-
-    // @ManyToMany(mappedBy="products",fetch=FetchType.EAGER)
-    // private List<CompletedDesign> completedDesignList;
+    @OneToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn(name="HOUSE_ID")
+    private House house;
 
 
     public Product()
@@ -59,22 +56,6 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public House getHouse() {
         return house;
     }
@@ -83,18 +64,44 @@ public class Product implements Serializable {
         this.house = house;
     }
 
+    public String getName() {
+        return name;
+    }
 
-//todo here maybe we need to insert indicative cost and minimum accesorie
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    //todo here maybe we need to insert indicative cost and minimum accesorie
 
     public Product clone()
     {
         Product product = new Product();
         product.setBasicDesign(this.isBasicDesign);
-        product.setDescription(this.getDescription());
         product.setHouse(this.getHouse());
-        product.setName(this.getName());
+        product.setPrice(this.getPrice());
+        product.setTimeToComplete(this.getTimeToComplete());
 
         return product;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Date getTimeToComplete() {
+        return timeToComplete;
+    }
+
+    public void setTimeToComplete(Date timeToComplete) {
+        this.timeToComplete = timeToComplete;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

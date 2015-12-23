@@ -21,16 +21,16 @@ public class House implements Serializable {
 
     @Id
     @Column( nullable = false)
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    //Product product;
+    private HouseStyleEnum houseStyle;
 
     @OneToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     @PrimaryKeyJoinColumn
     private Foundation foundation;
 
-    @OneToOne
+    @OneToOne( cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     @PrimaryKeyJoinColumn
     private Roof roof;
 
@@ -39,6 +39,13 @@ public class House implements Serializable {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Wall> walls;
 
+    public HouseStyleEnum getHouseStyle() {
+        return houseStyle;
+    }
+
+    public void setHouseStyle(HouseStyleEnum houseStyle) {
+        this.houseStyle = houseStyle;
+    }
 
     public Long getId() {
         return id;

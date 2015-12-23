@@ -6,6 +6,7 @@ import com.verdicchio.InventorySystemService;
 import com.verdicchio.repository.ConsultationRepository;
 
 import javax.inject.Inject;
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,12 +23,14 @@ public class InventorySystemServiceImpl  <T> implements InventorySystemService {
     ConsultationRepository consultationRepository;
 
     @Override
-    public DetailAvailability checkApplicability(long idCategory, long idComponent,long idHouseDesign){
+    public DetailAvailability checkApplicability(long idCategory, long idComponent,long idHouseStyle){
 
 
         DetailAvailability detailAvailability = new DetailAvailability();
 
-        //Todo implement logic: do return null to simulate not  applicability or create adHob object that will return the follows info:
+        //Todo provide some logic that use idHouseStyle
+
+        //Todo implement logic: do return null to simulate not  applicability or create adHoc object that will return the follows info:
         //price
         //availability
         //applicability
@@ -184,8 +187,14 @@ public class InventorySystemServiceImpl  <T> implements InventorySystemService {
     }
 
     @Override
-    public List<Product> getHouseStyle(){
-        List<Product> products = consultationRepository.getHouseDesign();
+    public List<HouseStyleEnum> getHouseStyles(){
+        List<HouseStyleEnum> houseStyleEnums = consultationRepository.getHouseStyles();
+        return houseStyleEnums;
+    }
+
+    @Override
+    public List<Product> getHouseByStyle(HouseStyleEnum houseStyleEnum){
+        List<Product> products = consultationRepository.getHouseByStyle(houseStyleEnum);
         return products;
     }
 

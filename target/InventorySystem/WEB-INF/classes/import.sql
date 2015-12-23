@@ -25,12 +25,11 @@ insert into Category(id,name) values (3,'Doors')
 insert into Category(id,name) values (4,'Roofs')
 insert into Category(id,name) values (5,'Foundations')
 
-
-insert into House(id)values (1)
-insert into House(id)values (2)
-insert into House(id)values (3)
-insert into House(id)values (4)
-insert into House(id)values (5)
+insert into House(id,houseStyle)values (1,1)
+insert into House(id,houseStyle)values (2,2)
+insert into House(id,houseStyle)values (3,3)
+insert into House(id,houseStyle)values (4,4)
+insert into House(id,houseStyle)values (5,5)
 
 
 insert into Wall(id, name, description, price,external_wall_Id,category,width,height)values (1,'Wall1','Description Wall1',10,1,1,5,8)
@@ -56,9 +55,9 @@ insert into Window(id, name, description, price, typeOfOpening, withCurtain,exte
 insert into Door(id, name, description, price, typeOfOpening,external_door_Id,category)values (1,'Door1','Description Door1',10,1,1,3)
 
 
-insert into Product(PROD_ID,name, description, HOUSE_ID,isBasicDesign) values (1, 'Duplex','This is the description of the house_style Duplex',1,true)
-insert into Product(PROD_ID,name, description, HOUSE_ID,isBasicDesign) values (2, 'Green','This is the description of the house_style Green',2,true)
-insert into Product(PROD_ID,name, description, HOUSE_ID,isBasicDesign) values (3, 'Town House','This is the description of the house_style Twon House',3,true)
-insert into Product(PROD_ID,name, description, HOUSE_ID,isBasicDesign) values (4, 'Single Section','This is the description of the house_style Single Section',4,true)
-insert into Product(PROD_ID,name, description, HOUSE_ID,isBasicDesign) values (5, 'Multiple Section','This is the description of the house_style Multiple Section',5,true)
+insert into Product(PROD_ID, HOUSE_ID,name,isBasicDesign,price,timeToComplete) values (1,1,'Model1',true,100,CURRENT_DATE())
+insert into Product(PROD_ID, HOUSE_ID,name,isBasicDesign,price,timeToComplete) values (2,2,'Model2',true,90,CURRENT_DATE())
+insert into Product(PROD_ID, HOUSE_ID,name,isBasicDesign,price,timeToComplete) values (3,3,'Model3',true,110,CURRENT_DATE())
+insert into Product(PROD_ID, HOUSE_ID,name,isBasicDesign,price,timeToComplete) values (4,4,'Model4',true,85,CURRENT_DATE())
+insert into Product(PROD_ID, HOUSE_ID,name,isBasicDesign,price,timeToComplete) values (5,5,'Model5',true,99,CURRENT_DATE())
 

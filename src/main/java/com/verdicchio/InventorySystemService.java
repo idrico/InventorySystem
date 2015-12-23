@@ -19,7 +19,7 @@ public interface InventorySystemService{
      * @return A boolean that verify if it is applicable
      */
     @WebMethod
-    DetailAvailability checkApplicability(long idCategory, long idComponent,long idHouseDesign);
+    DetailAvailability checkApplicability(long idCategory, long idComponent,long idHouseStyle);
 
 
     /**
@@ -53,7 +53,10 @@ public interface InventorySystemService{
     List<Roof> getRoofDetails(long idRoof);
 
     @WebMethod
-    List<Product> getHouseStyle();
+    List<Product> getHouseByStyle(HouseStyleEnum houseStyleEnum);
+
+    @WebMethod
+    List<HouseStyleEnum> getHouseStyles();
 
     @WebMethod
     House getHouseDetails(long idHouse);

@@ -2,13 +2,14 @@
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/impl/InventorySystemServiceImpl.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Product.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Wall.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/HouseStyleEnum.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Aperture.java
-/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/DetailAvailability.java
-/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Door.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/ApertureTypeOfOpeningEnum.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Door.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/DetailAvailability.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Foundation.java
-/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/House.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Component.java
+/home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/House.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Window.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Category.java
 /home/idrico/application/InventorySystem/src/main/java/com/verdicchio/model/Roof.java
